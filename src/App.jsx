@@ -53,7 +53,7 @@ function App() {
       setError("");
       setRecords([...records, newRecord]);
       resetRecords();
-    } catch (e) {
+    } catch {
       setError("データベースへの保存に失敗しました");
     }
   };
@@ -62,7 +62,7 @@ function App() {
     try {
       await deleteStudyRecord(id);
       setRecords(records.filter((record) => record.id !== id));
-    } catch (e) {
+    } catch {
       setError("データの削除に失敗しました");
     }
   };
@@ -98,7 +98,12 @@ function App() {
           <div>
             {studyrecord.title} {studyrecord.time}時間
           </div>
-          <button onClick={() => setDelete(studyrecord.id)}>削除</button>
+          <button
+            onClick={() => setDelete(studyrecord.id)}
+            style={{ marginLeft: "10px" }}
+          >
+            削除
+          </button>
         </div>
       ))}
       <button
