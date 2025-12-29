@@ -1,16 +1,20 @@
-# React + Vite
+# ToDO-App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![alt text](image.png)
 
-Currently, two official plugins are available:
+- 概要
+  学習内容・時間を記録し、学習のモチベーションを維持するためのツールです。
+  supabase によりデータの保存を可能にしました。また、GitHubActions,Jest,ReactTestingLibrary を使用し CI/CD を可能にしました。
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 環境設定の方法
+  ルートディレクトリに `.env` ファイルを作成し、以下の内容を記述してください。
+  （値は自身の Supabase プロジェクトから取得できます。）
+  `VITE_SUPABASE_URL=YOUR_SUPABASE_URL`
+  `VITE_SUPABASE_ANON_KEY=YOUR_SUPABASE_ANON_KEY`
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- 起動の仕方
+  1,依存関係のインストール
+  `npm install`
+  2,ローカルサーバーの起動
+  以下のコマンドを実行後、 `http://localhost:5173` にアクセスしてください。
+  `npm run dev`

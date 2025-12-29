@@ -23,9 +23,11 @@ describe("App", () => {
   });
   test("学習記録を追加することができる", async () => {
     render(<App />);
-    const input = await screen.findByRole("textbox");
+    const contentInput = await screen.findByRole("textbox");
+    const timeInput = await screen.findByRole("spinbutton");
     const addButton = await screen.findByRole("button", { name: "登録" });
-    fireEvent.change(input, { target: { value: "テストタスク" } });
+    fireEvent.change(contentInput, { target: { value: "テストタスク" } });
+    fireEvent.change(timeInput, { target: { value: "1" } });
     fireEvent.click(addButton);
     const task = await screen.findByText(/テストタスク/);
     expect(task).toBeInTheDocument();
