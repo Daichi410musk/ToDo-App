@@ -1,4 +1,4 @@
-# ToDO-App
+# ToDo-App
 
 ![alt text](image.png)
 
